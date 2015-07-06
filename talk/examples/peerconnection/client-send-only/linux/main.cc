@@ -27,10 +27,10 @@
 
 #include <gtk/gtk.h>
 
-#include "talk/examples/peerconnection/client/conductor.h"
-#include "talk/examples/peerconnection/client/flagdefs.h"
-#include "talk/examples/peerconnection/client/linux/main_wnd.h"
-#include "talk/examples/peerconnection/client/peer_connection_client.h"
+#include "talk/examples/peerconnection/client-send-only/conductor.h"
+#include "talk/examples/peerconnection/client-send-only/flagdefs.h"
+#include "talk/examples/peerconnection/client-send-only/linux/main_wnd.h"
+#include "talk/examples/peerconnection/client-send-only/peer_connection_client.h"
 
 #include "webrtc/base/ssladapter.h"
 #include "webrtc/base/thread.h"

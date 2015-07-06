@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "talk/examples/peerconnection/client/conductor.h"
+#include "talk/examples/peerconnection/client-send-only/conductor.h"
 
 #include <utility>
 #include <iostream>

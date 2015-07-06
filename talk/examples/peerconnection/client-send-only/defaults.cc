@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "talk/examples/peerconnection/client/defaults.h"
+#include "talk/examples/peerconnection/client-send-only/defaults.h"
 
 #include <stdlib.h>
 #include <string.h>

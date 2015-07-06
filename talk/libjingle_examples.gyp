@@ -193,7 +193,7 @@
               },
             }],  # OS=="linux"
           ],  # conditions
-        },  # target peerconnection_client
+        },  # target peerconnection_sendonly_client
         {
           'target_name': 'gwr_jumbo_server',
           'type': 'executable',

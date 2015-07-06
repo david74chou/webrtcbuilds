@@ -26,13 +26,13 @@
  */
 
 
-#include "talk/examples/peerconnection/client/linux/main_wnd.h"
+#include "talk/examples/peerconnection/client-send-only/linux/main_wnd.h"
 
 #include <gdk/gdkkeysyms.h>
 #include <gtk/gtk.h>
 #include <stddef.h>
 
-#include "talk/examples/peerconnection/client/defaults.h"
+#include "talk/examples/peerconnection/client-send-only/defaults.h"
 #include "webrtc/base/common.h"
 #include "webrtc/base/logging.h"
 #include "webrtc/base/stringutils.h"
