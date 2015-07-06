@@ -147,6 +147,96 @@
             }],  # OS=="linux"
           ],  # conditions
         },  # target peerconnection_client
+        {
+          'target_name': 'peerconnection_sendonly_client',
+          'type': 'executable',
+          'sources': [
+            'examples/peerconnection/client-send-only/conductor.cc',
+            'examples/peerconnection/client-send-only/conductor.h',
+            'examples/peerconnection/client-send-only/defaults.cc',
+            'examples/peerconnection/client-send-only/defaults.h',
+            'examples/peerconnection/client-send-only/peer_connection_client.cc',
+            'examples/peerconnection/client-send-only/peer_connection_client.h',
+          ],
+          'dependencies': [
+            'libjingle.gyp:libjingle_peerconnection',
+            '<@(libjingle_tests_additional_deps)',
+          ],
+          'conditions': [
+            ['build_json==1', {
+              'dependencies': [
+                '<(DEPTH)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+              ],
+            }],
+            ['OS=="linux"', {
+              'sources': [
+                'examples/peerconnection/client-send-only/linux/main.cc',
+                'examples/peerconnection/client-send-only/linux/main_wnd.cc',
+                'examples/peerconnection/client-send-only/linux/main_wnd.h',
+              ],
+              'cflags': [
+                '<!@(pkg-config --cflags glib-2.0 gobject-2.0 gtk+-2.0)',
+              ],
+              'link_settings': {
+                'ldflags': [
+                  '<!@(pkg-config --libs-only-L --libs-only-other glib-2.0'
+                      ' gobject-2.0 gthread-2.0 gtk+-2.0)',
+                ],
+                'libraries': [
+                  '<!@(pkg-config --libs-only-l glib-2.0 gobject-2.0'
+                      ' gthread-2.0 gtk+-2.0)',
+                  '-lX11',
+                  '-lXcomposite',
+                  '-lXext',
+                  '-lXrender',
+                ],
+              },
+            }],  # OS=="linux"
+          ],  # conditions
+        },  # target peerconnection_client
+        {
+          'target_name': 'gwr_jumbo_server',
+          'type': 'executable',
+          'sources': [
+            'examples/jumbo/gwr_jumbo_server.cpp',
+            'examples/jumbo/peer_manager.cpp',
+            'examples/jumbo/peer_manager.h',
+            'examples/jumbo/set_sdp_observer.cpp',
+            'examples/jumbo/set_sdp_observer.h',
+            'examples/jumbo/peer_connection_observer.h',
+            'examples/jumbo/peer_connection_observer.cpp',
+            'examples/jumbo/create_sdp_observer.cpp',
+            'examples/jumbo/create_sdp_observer.h',
+          ],
+          'dependencies': [
+            'libjingle.gyp:libjingle_peerconnection',
+            '<@(libjingle_tests_additional_deps)',
+          ],
+          'conditions': [
+            ['build_json==1', {
+              'dependencies': [
+                '<(DEPTH)/third_party/jsoncpp/jsoncpp.gyp:jsoncpp',
+              ],
+            }],
+            ['OS=="linux"', {
+              'cflags': [
+                '<!@(pkg-config --cflags glib-2.0 gobject-2.0 libsoup-2.4 glibmm-2.4 giomm-2.4)',
+              ],
+              'link_settings': {
+                'ldflags': [
+                  '<!@(pkg-config --libs-only-L --libs-only-other glib-2.0 gobject-2.0 gthread-2.0 libsoup-2.4 glibmm-2.4 giomm-2.4)',
+                ],
+                'libraries': [
+                  '<!@(pkg-config --libs-only-l glib-2.0 gobject-2.0 libsoup-2.4 glibmm-2.4 giomm-2.4)',
+                  '-lX11',
+                  '-lXcomposite',
+                  '-lXext',
+                  '-lXrender',
+                ],
+              },
+            }],  # OS=="linux"
+          ],  # conditions
+        },  # gwr_jumbo_server
       ], # targets
     }],  # OS=="linux" or OS=="win"
 
